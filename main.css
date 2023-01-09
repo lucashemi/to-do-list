@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.list {
+    max-height: 60vh;
+    min-width: 15vw;
+    max-width: 30vw;
+    overflow: auto;
+    border: 5px solid black;
+    padding: 2rem 6rem;
+}
+
+.add {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.item {
+    border: 3px solid black;
+    margin: 0.3rem;
+    padding: 0.4em 3em;
+    list-style-type: none;
+}
+
+.fa-square, .fa-square-check {
+    cursor: pointer;
+    margin: 0.2rem;
+    margin-left: 0.5rem;
+}
+
+.edit {
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+.delete {
+    margin: 0.1rem;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1250px) {
+    .list {
+        padding: 1em 1em;
+        max-width: 80vw;
+        overflow: initial;
+        max-height: fit-content;
+    }
+
+    .add {
+        font-size: 1.2em;
+    }
+
+    .item {
+        padding: 1em 3em;
+    }
+
+    .fa-solid {
+        font-size: 1.1em;
+    }
+}
