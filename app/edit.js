@@ -18,7 +18,7 @@ function editElement(element, id) {
     const put = document.createElement('input');
 
     put.style.fontSize = '0.9em';
-    put.autofocus = true;
+    put.focus();
     put.value = element.childNodes[0].textContent;
     
     forms.appendChild(put);
@@ -27,12 +27,12 @@ function editElement(element, id) {
 
     forms.addEventListener('submit', (e) => {
         e.preventDefault();
+        unhide(element, put, forms, id);
+    }, true);
 
-        id = jsList.findIndex(el => el.id == id)
-        jsList[id].name = put.value;
-        localStorage.setItem('jsList', JSON.stringify(jsList));
-
-        unhide(element, put, forms);
+    forms.addEventListener('focusout', (e) => {
+        e.preventDefault();
+        unhide(element, put, forms, id);
     }, true);
 
     element.appendChild(forms);
@@ -45,7 +45,7 @@ function hide(element) {
     element.childNodes[3].style.display = 'none';
 }
 
-function unhide(element, put, forms) {
+function unhide(element, put, forms, id) {
     element.childNodes[0].textContent = put.value;
     element.childNodes[1].style.display = '';
     element.childNodes[2].style.display = '';
@@ -53,4 +53,8 @@ function unhide(element, put, forms) {
 
     put.remove();
     forms.remove();
+
+    id = jsList.findIndex(el => el.id == id);
+    jsList[id].name = put.value;
+    localStorage.setItem('jsList', JSON.stringify(jsList));
 }
