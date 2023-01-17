@@ -1,6 +1,10 @@
+import { deleteButton } from "./delete.js";
+import { editButton } from "./edit.js";
+import { checkboxButton } from "./check.js";
+
 const form = document.getElementById('form');
 const list = document.getElementById('list');
-const jsList = JSON.parse(localStorage.getItem('jsList')) || []
+export const jsList = JSON.parse(localStorage.getItem('jsList')) || []
 
 jsList.forEach(element => {
     createElement(element);

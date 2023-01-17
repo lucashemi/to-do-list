@@ -1,4 +1,6 @@
-function editButton(id) {
+import { jsList } from "./list.js";
+
+export function editButton(id) {
     const buttonElement = document.createElement('i');
     buttonElement.classList.add('edit');
 

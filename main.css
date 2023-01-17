@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 body {
+    background-color: #eee;
+    color: #111;
     font-family: 'Roboto', sans-serif;
     text-align: center;
 }
@@ -21,8 +23,13 @@ h1 {
     min-width: 15vw;
     max-width: 30vw;
     overflow: auto;
-    border: 5px solid black;
+    border: 5px solid #111;
     padding: 2rem 6rem;
+}
+
+input {
+    background-color: #eee;
+    color: #111;
 }
 
 .add {
@@ -31,7 +38,7 @@ h1 {
 }
 
 .item {
-    border: 3px solid black;
+    border: 3px solid #111;
     margin: 0.3rem;
     padding: 0.4em 3em;
     list-style-type: none;

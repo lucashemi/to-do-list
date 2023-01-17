@@ -1,4 +1,6 @@
-function deleteButton(id) {
+import { jsList } from "./list.js";
+
+export function deleteButton(id) {
     const deleteButtonElement = document.createElement('i');
 
     deleteButtonElement.classList.add('delete');
