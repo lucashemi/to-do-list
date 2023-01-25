@@ -1,6 +1,6 @@
 import { deleteButton } from "./delete.js";
 import { editButton } from "./edit.js";
-import { checkboxButton } from "./check.js";
+import { checkboxButton, toggleCheck } from "./check.js";
 
 const form = document.getElementById('form');
 const list = document.getElementById('list');
@@ -10,7 +10,7 @@ jsList.forEach(element => {
     createElement(element);
     const tag = document.querySelector("[data-id='"+element.id+"']");
     if(jsList[jsList.findIndex(el => el.id == tag.dataset.id)].done == true) {
-        checkElement(tag.childNodes[1], tag.dataset.id);
+        toggleCheck(tag.childNodes[1], tag.dataset.id);
     }
 });
 

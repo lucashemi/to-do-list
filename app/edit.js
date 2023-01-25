@@ -2,10 +2,7 @@ import { jsList } from "./list.js";
 
 export function editButton(id) {
     const buttonElement = document.createElement('i');
-    buttonElement.classList.add('edit');
-
-    buttonElement.classList.add('fa-solid');
-    buttonElement.classList.add('fa-pen-to-square');
+    buttonElement.classList.add('edit', 'fa-solid', 'fa-pen-to-square');
     buttonElement.setAttribute('title', 'Edit');
 
     buttonElement.addEventListener('click', (clicked) => {
@@ -16,28 +13,28 @@ export function editButton(id) {
 }
 
 function editElement(element, id) {
-    const forms = document.createElement('form');
-    const put = document.createElement('input');
+    const form = document.createElement('form');
+    const input = document.createElement('input');
 
-    put.style.fontSize = '0.9em';
-    put.focus();
-    put.value = element.childNodes[0].textContent;
+    input.style.fontSize = '0.9em';
+    input.focus();
+    input.value = element.childNodes[0].textContent;
     
-    forms.appendChild(put);
+    form.appendChild(input);
 
     hide(element);
 
-    forms.addEventListener('submit', (e) => {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
-        unhide(element, put, forms, id);
+        unhide(element, input, form, id);
     }, true);
 
-    forms.addEventListener('focusout', (e) => {
+    form.addEventListener('focusout', (e) => {
         e.preventDefault();
-        unhide(element, put, forms, id);
+        unhide(element, input, form, id);
     }, true);
 
-    element.appendChild(forms);
+    element.appendChild(form);
 }
 
 function hide(element) {
@@ -47,16 +44,16 @@ function hide(element) {
     element.childNodes[3].style.display = 'none';
 }
 
-function unhide(element, put, forms, id) {
-    element.childNodes[0].textContent = put.value;
+function unhide(element, input, form, id) {
+    element.childNodes[0].textContent = input.value;
     element.childNodes[1].style.display = '';
     element.childNodes[2].style.display = '';
     element.childNodes[3].style.display = '';
 
-    put.remove();
-    forms.remove();
+    input.remove();
+    form.remove();
 
     id = jsList.findIndex(el => el.id == id);
-    jsList[id].name = put.value;
+    jsList[id].name = input.value;
     localStorage.setItem('jsList', JSON.stringify(jsList));
 }

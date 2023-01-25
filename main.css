@@ -50,6 +50,11 @@ input {
     margin-left: 0.5rem;
 }
 
+.checked {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
 .edit {
     margin: 0.5rem;
     cursor: pointer;

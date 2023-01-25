@@ -2,11 +2,7 @@ import { jsList } from "./list.js";
 
 export function deleteButton(id) {
     const deleteButtonElement = document.createElement('i');
-
-    deleteButtonElement.classList.add('delete');
-    deleteButtonElement.classList.add('fa-solid');
-    deleteButtonElement.classList.add('fa-trash');
-    
+    deleteButtonElement.classList.add('delete', 'fa-solid', 'fa-trash');
     deleteButtonElement.setAttribute('title', 'Delete');
 
     deleteButtonElement.addEventListener('click', (clicked) => {
