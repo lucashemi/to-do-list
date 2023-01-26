@@ -21,7 +21,6 @@ function editElement(element, id) {
     input.value = element.childNodes[0].textContent;
     
     form.appendChild(input);
-
     hide(element);
 
     form.addEventListener('submit', (e) => {

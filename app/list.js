@@ -41,15 +41,11 @@ form.addEventListener('submit', (submit) => {
 function createElement(item) {
     const newItem = document.createElement('li');
     newItem.classList.add('item');
-
     newItem.dataset.id = item.id;
-
     newItem.textContent += item.name;
 
     newItem.appendChild(checkboxButton(item.id));
-
-    newItem.appendChild(editButton(item.id));
-    
+    newItem.appendChild(editButton(item.id));    
     newItem.appendChild(deleteButton(item.id));
 
     list.appendChild(newItem);

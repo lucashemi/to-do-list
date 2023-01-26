@@ -15,8 +15,6 @@ export function deleteButton(id) {
 
 function deleteElement(element, id) {
     element.remove();
-
     jsList.splice(jsList.findIndex(el => el.id === id), 1);
-
     localStorage.setItem('jsList', JSON.stringify(jsList));
 }
